@@ -9,19 +9,12 @@ document.getElementById("generatebtn").onclick = function() {
    uselessarray = useless.split(",");
    nsfwarray = nsfw.split(",");
 
-
-   // console.log(usefularray)
-   // console.log(uselessarray)
-   // console.log(nsfwarray)
-
-
-var id;
+  var array = [];
 $("#containeruseful :input").each(function(e){	
-  id = this.id;
-//console.log([this.value]);
-var all = $.merge([], [this.value]);
-console.log(all)
+  array.push(this.value)
 });
+
+  console.log(array)
 
 
 
