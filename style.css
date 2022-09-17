@@ -1,0 +1,48 @@
+
+/* Language: css */
+/* Path: style.css */
+
+
+.containerbox {
+    background-color: #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 35rem;
+    height: 40rem;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    box-shadow: inset #0697f4 2px 0px 20px 0px,  #f00708 0px 0px 10px 0px;
+    border-radius: 50px;
+}
+.containermain {
+    background-color: #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+}
+#generatebtn {
+    background-color: #f1f1f1;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border: #151515 2px solid;
+    border-radius: 50px;
+    transition: all 0.9s ease;
+}
+#generatebtn:hover {
+    border-radius: 10px;
+    transition: all 0.5s ease;
+
+
+}
+
+.container {
+    background-color: #f1f1f1;
+}
