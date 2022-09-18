@@ -2,9 +2,15 @@
 /* Language: css */
 /* Path: style.css */
 
+* {
+    background-color: #151515;
+    text-decoration: none;
+    color: #f1f1f1;
+    font-family: 'Poppins', sans-serif;
+}
 
 .containerbox {
-    background-color: #f1f1f1;
+    background-color: #151515;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -30,13 +36,13 @@
     transform: translate(-50%, -50%);
 }
 #generatebtn {
-    background-color: #f1f1f1;
+
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 100%;
-    border: #151515 2px solid;
+    border: #f1f1f1 2px solid;
     border-radius: 50px;
     transition: all 0.9s ease;
 }
@@ -44,9 +50,23 @@
     border-radius: 10px;
     transition: all 0.5s ease;
 
-
+}
+#container input {
+    color: #f1f1f1;
+    background-color: #151515;
+    border-color: #0697f4;
+}
+#container input:hover {
+    color: #f1f1f1;
+    background-color: #151515;
+    border-color: #f00708;
+}
+#container button {
+    color: #f1f1f1;
+    background-color: #151515;
+    border-color: #0697f4;
 }
 
 .container {
-    background-color: #f1f1f1;
+    background-color: #2c2c2c;
 }
