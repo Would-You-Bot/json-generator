@@ -8,16 +8,20 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 35rem;
-    height: 40rem;
+    width: 40rem;
+    height: auto;
+    min-height: 45rem;
+    display: inline;
     align-items: center;
     justify-content: center;
     transform: translate(-50%, -50%);
     box-shadow: inset #0697f4 2px 0px 20px 0px,  #f00708 0px 0px 10px 0px;
     border-radius: 50px;
+
 }
+
 .containermain {
-    background-color: #f1f1f1;
+    display: inline;
     position: absolute;
     top: 50%;
     left: 50%;
