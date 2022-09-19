@@ -41,7 +41,6 @@ document.getElementById("generatebtn").onclick = function () {
 document.getElementById("addbtn1").onclick = function () {
   const inputs = document.querySelectorAll("#containeruseful input");
   var lastInput = inputs.item(inputs.length-1);
-  console.log(lastInput)
 
   if(lastInput.value) {
     const container = document.getElementById("containeruseful");
@@ -53,7 +52,6 @@ document.getElementById("addbtn1").onclick = function () {
 document.getElementById("addbtn2").onclick = function () {
   const inputs = document.querySelectorAll("#containeruseless input");
   var lastInput = inputs.item(inputs.length-1);
-  console.log(lastInput)
   
   if(lastInput.value) {const container = document.getElementById("containeruseless");
     const input = document.createElement("input");
@@ -64,7 +62,6 @@ document.getElementById("addbtn2").onclick = function () {
 document.getElementById("addbtn3").onclick = function () {
   const inputs = document.querySelectorAll("#containernsfw input");
   var lastInput = inputs.item(inputs.length-1);
-  console.log(lastInput)
   
   if(lastInput.value) {
     const container = document.getElementById("containernsfw");
