@@ -11,34 +11,33 @@
 
 .containerbox {
     background-color: #151515;
+    display: flex;
     position: absolute;
-    top: 50%;
-    left: 50%;
     width: 40rem;
-    height: auto;
     min-height: 45rem;
-    display: inline;
     align-items: center;
     justify-content: center;
-    transform: translate(-50%, -50%);
+    left: 50%;
+    transform: translate(-50%, 0%);
     box-shadow: inset #0697f4 2px 0px 20px 0px,  #f00708 0px 0px 10px 0px;
     border-radius: 50px;
-
+    margin-top: 10px;
 }
 
 .containermain {
-    display: inline;
-    position: absolute;
+    display: flex;
+    width: 400px;
     top: 50%;
     left: 50%;
     align-items: center;
     justify-content: center;
-    transform: translate(-50%, -50%);
+    flex-wrap: wrap;
+    margin: 20px 0px;
 }
 #generatebtn {
 
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 20px 0;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -69,4 +68,16 @@
 
 .container {
     background-color: #2c2c2c;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.oneline {
+    display: flex;
+    flex-wrap: nowrap;
 }
