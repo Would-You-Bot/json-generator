@@ -1,4 +1,4 @@
-document.getElementById("generatebtn").onclick = function () {
+function generateJson() {
   var arrayuseful = [];
   $("#containeruseful :input").each(function (e) {
     arrayuseful.push(this.value);
@@ -23,7 +23,11 @@ document.getElementById("generatebtn").onclick = function () {
     nsfw: filternsfw,
   };
 
-  console.log(finished);
+  return finished;
+}
+
+document.getElementById("generatebtn").onclick = function () {
+  finished = generateJson();
 
   const blob = new Blob([JSON.stringify(finished)], {
     type: "application/json",
@@ -40,33 +44,48 @@ document.getElementById("generatebtn").onclick = function () {
 
 document.getElementById("addbtn1").onclick = function () {
   const inputs = document.querySelectorAll("#containeruseful input");
-  var lastInput = inputs.item(inputs.length-1);
+  var lastInput = inputs.item(inputs.length - 1);
 
-  if(lastInput.value) {
+  if (lastInput.value) {
     const container = document.getElementById("containeruseful");
     const input = document.createElement("input");
-    input.type = 'text';
+    input.type = "text";
     container.appendChild(input);
+    refreshPreview();
   }
 };
 document.getElementById("addbtn2").onclick = function () {
   const inputs = document.querySelectorAll("#containeruseless input");
-  var lastInput = inputs.item(inputs.length-1);
-  
-  if(lastInput.value) {const container = document.getElementById("containeruseless");
+  var lastInput = inputs.item(inputs.length - 1);
+
+  if (lastInput.value) {
+    const container = document.getElementById("containeruseless");
     const input = document.createElement("input");
-    input.type = 'text';
+    input.type = "text";
     container.appendChild(input);
+    refreshPreview();
   }
 };
 document.getElementById("addbtn3").onclick = function () {
   const inputs = document.querySelectorAll("#containernsfw input");
-  var lastInput = inputs.item(inputs.length-1);
-  
-  if(lastInput.value) {
+  var lastInput = inputs.item(inputs.length - 1);
+
+  if (lastInput.value) {
     const container = document.getElementById("containernsfw");
     const input = document.createElement("input");
-    input.type = 'text';
+    input.type = "text";
     container.appendChild(input);
+    refreshPreview();
   }
+};
+
+document.getElementById("previewbtn").onclick = function refreshPreview(changeState = false) {
+  const json = JSON.stringify(generateJson(), undefined, 4);
+  var preview = document.getElementById("preview-window");
+  if (changeState) {
+    console.log(preview.parentElement.hidden);
+    preview.parentElement.hidden = !preview.parentElement.hidden;
+  }
+  preview.innerHTML = json;
+  hljs.highlightAll();
 };
