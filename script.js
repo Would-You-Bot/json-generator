@@ -71,6 +71,7 @@ document.getElementById("addbtn3").onclick = function () {
   }
 };
 function createInput(id, lastKnownValue) {
+  if(!lastKnownValue) {return}
   refreshPreview();
   const container = document.getElementById(id);
   const input = document.createElement("input");
