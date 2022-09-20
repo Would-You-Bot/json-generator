@@ -45,20 +45,16 @@ document.getElementById("addbtn1").onclick = function () {
   var lastInput = inputs.item(inputs.length-1);
 
   if(lastInput.value) {
-    const container = document.getElementById("containeruseful");
-    const input = document.createElement("input");
-    input.type = 'text';
-    container.appendChild(input);
+    createInput("containeruseful", inputs[0].value);
+    inputs[0].value = ""
   }
 };
 document.getElementById("addbtn2").onclick = function () {
   const inputs = document.querySelectorAll("#containeruseless input");
   var lastInput = inputs.item(inputs.length-1);
-  
-  if(lastInput.value) {const container = document.getElementById("containeruseless");
-    const input = document.createElement("input");
-    input.type = 'text';
-    container.appendChild(input);
+  if(lastInput.value) {
+    createInput("containeruseless", inputs[0].value);
+    inputs[0].value = ""
   }
 };
 document.getElementById("addbtn3").onclick = function () {
@@ -66,9 +62,14 @@ document.getElementById("addbtn3").onclick = function () {
   var lastInput = inputs.item(inputs.length-1);
   
   if(lastInput.value) {
-    const container = document.getElementById("containernsfw");
-    const input = document.createElement("input");
-    input.type = 'text';
-    container.appendChild(input);
+    createInput("containernsfw", inputs[0].value);
+    inputs[0].value = ""
   }
 };
+function createInput(id, lastKnownValue) {
+  const container = document.getElementById(id);
+  const input = document.createElement("input");
+  input.type = 'text';
+  input.value = lastKnownValue;
+  container.append(input)
+}
