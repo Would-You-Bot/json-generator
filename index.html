@@ -13,53 +13,59 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/go.min.js"></script>
     <title>Would You - Json Generator</title>
   </head>
   <body>
     <div class="containerbox">
-    <div class="containermain">
-      <div id="headings">
-        <h1 id="first-h">Would You</h1>
-        <h2>JSON Generator</h2>
-      </div>
-        
-      <h3>Generate would you rather import files using this UI! Press the + button to add more!</h3>
-    <div id="cont-div">
-      <div id="container">
-      <h2>Useful👍</h2>
-      <div id="containeruseful" class="list">
-        <div class="oneline">
-          <input type="text"/>
-          <button id="addbtn1">+</button>
+      <div class="containermain">
+        <div id="headings">
+          <h1 id="first-h">Would You</h1>
+          <h2>JSON Generator</h2>
         </div>
-      </div>
 
-    </div>
-    <div id="container">
-      <h2>Useless👎</h2>
-      <div id="containeruseless" class="list">
-        <div class="oneline">
-          <input type="text"/>
-          <button id="addbtn2">+</button>
+        <h3>
+          Generate would you rather import files using this UI! Press the +
+          button to add more!
+        </h3>
+        <div id="cont-div">
+          <div id="container">
+            <h2>Useful👍</h2>
+            <div id="containeruseful" class="list">
+              <div class="oneline">
+                <input type="text" />
+                <button id="addbtn1">+</button>
+              </div>
+            </div>
+          </div>
+          <div id="container">
+            <h2>Useless👎</h2>
+            <div id="containeruseless" class="list">
+              <div class="oneline">
+                <input type="text" />
+                <button id="addbtn2">+</button>
+              </div>
+            </div>
+          </div>
+          <div id="container">
+            <h2>NSFW🔞</h2>
+            <div id="containernsfw" class="list">
+              <div class="oneline">
+                <input type="text" />
+                <button id="addbtn3">+</button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-    </div>
-    <div id="container">
-      <h2>NSFW🔞</h2>
-      <div id="containernsfw" class="list">
-        <div class="oneline">
-          <input type="text"/>
-          <button id="addbtn3">+</button>
-        </div>
-      </div>
+        <button id="generatebtn">Generate JSON file</button>
+        <button id="previewbtn">Preview JSON</button>
 
+        <pre hidden><code class="language-javascript" id="preview-window"></code></pre>
+      </div>
     </div>
-    </div>
-    
-    <button id="generatebtn">Generate Json file</button>
-    </div>
-</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="script.js"></script>

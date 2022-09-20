@@ -1,4 +1,4 @@
-document.getElementById("generatebtn").onclick = function () {
+function generateJson() {
   var arrayuseful = [];
   $("#containeruseful :input").each(function (e) {
     arrayuseful.push(this.value);
@@ -23,9 +23,13 @@ document.getElementById("generatebtn").onclick = function () {
     nsfw: filternsfw,
   };
 
-  console.log(finished);
+  return finished;
+}
 
-if(filteruseful.length == 0) return alert("You need to add at least one question before exporting");
+document.getElementById("generatebtn").onclick = function () {
+  finished = generateJson();
+
+  if(finished['useful'].length == 0) return alert("You need to add at least one question before exporting");
 
   const blob = new Blob([JSON.stringify(finished)], {
     type: "application/json",
@@ -42,7 +46,7 @@ if(filteruseful.length == 0) return alert("You need to add at least one question
 
 document.getElementById("addbtn1").onclick = function () {
   const inputs = document.querySelectorAll("#containeruseful input");
-  var lastInput = inputs.item(inputs.length-1);
+  var lastInput = inputs.item(inputs.length - 1);
 
   if(lastInput.value) {
     createInput("containeruseful", inputs[0].value);
@@ -59,17 +63,30 @@ document.getElementById("addbtn2").onclick = function () {
 };
 document.getElementById("addbtn3").onclick = function () {
   const inputs = document.querySelectorAll("#containernsfw input");
-  var lastInput = inputs.item(inputs.length-1);
-  
-  if(lastInput.value) {
+  var lastInput = inputs.item(inputs.length - 1);
+
+  if (lastInput.value) {
     createInput("containernsfw", inputs[0].value);
     inputs[0].value = ""
   }
 };
 function createInput(id, lastKnownValue) {
+  refreshPreview();
   const container = document.getElementById(id);
   const input = document.createElement("input");
-  input.type = 'text';
+  input.type = "text";
   input.value = lastKnownValue;
   container.append(input)
+}
+
+document.getElementById("previewbtn").onclick = function() {refreshPreview(true)}
+
+function refreshPreview(changeState=false) {
+  const json = JSON.stringify(generateJson(), undefined, 4);
+  var preview = document.getElementById("preview-window");
+  if (changeState) {
+    preview.parentElement.hidden = !preview.parentElement.hidden;
+  }
+  preview.innerHTML = json;
+  hljs.highlightAll();
 }
