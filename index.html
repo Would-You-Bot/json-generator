@@ -10,35 +10,46 @@
   <body>
     <div class="containerbox">
     <div class="containermain">
-        <h1>Would You - JSON Generator</h1>
-        <h3>Generate would you rather import files using this ui! Press the + button to add more!</h3>
-    <div id="container">
+      <div id="headings">
+        <h1 id="first-h">Would You</h1>
+        <h2>JSON Generator</h2>
+      </div>
+        
+      <h4>Generate would you rather import files using this UI! Press the + button to add more!</h4>
+    <div id="cont-div">
+      <div id="container">
       <h2>Useful👍</h2>
-      <div id="containeruseful">
-      <input type="text"/>
-      <button id="addbtn1">+</button> 
+      <div id="containeruseful" class="list">
+        <div class="oneline">
+          <input type="text"/>
+          <button id="addbtn1">+</button>
+        </div>
       </div>
 
     </div>
     <div id="container">
       <h2>Useless👎</h2>
-      <div id="containeruseless">
-      <input type="text"/>
-
-      <button id="addbtn2">+</button>
+      <div id="containeruseless" class="list">
+        <div class="oneline">
+          <input type="text"/>
+          <button id="addbtn2">+</button>
+        </div>
       </div>
 
     </div>
     <div id="container">
       <h2>NSFW🔞</h2>
-      <div id="containernsfw">
-      <input type="text"/>
-
-      <button id="addbtn3">+</button>
+      <div id="containernsfw" class="list">
+        <div class="oneline">
+          <input type="text"/>
+          <button id="addbtn3">+</button>
+        </div>
       </div>
 
     </div>
-    <button id="generatebtn"">Generate Json file</button>
+    </div>
+    
+    <button id="generatebtn">Generate Json file</button>
     </div>
 </div>
 

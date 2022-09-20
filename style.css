@@ -1,44 +1,57 @@
-
 /* Language: css */
 /* Path: style.css */
 
 * {
-    background-color: #151515;
     text-decoration: none;
     color: #f1f1f1;
     font-family: 'Poppins', sans-serif;
 }
 
-.containerbox {
+body {
     background-color: #151515;
+    text-align: center;
+}
+
+#headings h1, #headings h2{
+    margin: 0px;
+}
+
+#headings {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.containerbox {
+    background-image: linear-gradient(to bottom right, #f00708 , #0697f4 );
+    display: flex;
     position: absolute;
-    top: 50%;
-    left: 50%;
     width: 40rem;
-    height: auto;
     min-height: 45rem;
-    display: inline;
     align-items: center;
     justify-content: center;
-    transform: translate(-50%, -50%);
-    box-shadow: inset #0697f4 2px 0px 20px 0px,  #f00708 0px 0px 10px 0px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    box-shadow: inset #0697f4 2px 0px 20px 0px, #f00708 0px 0px 10px 0px;
     border-radius: 50px;
-
+    margin-top: 10px;
 }
 
 .containermain {
-    display: inline;
-    position: absolute;
+    display: flex;
+    width: 400px;
     top: 50%;
     left: 50%;
     align-items: center;
     justify-content: center;
-    transform: translate(-50%, -50%);
+    flex-wrap: wrap;
+    margin: 20px 0px;
 }
-#generatebtn {
 
+#generatebtn {
+    background-color: transparent;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 20px 0;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -46,27 +59,50 @@
     border-radius: 50px;
     transition: all 0.9s ease;
 }
+
 #generatebtn:hover {
     border-radius: 10px;
     transition: all 0.5s ease;
 
 }
+
 #container input {
     color: #f1f1f1;
     background-color: #151515;
-    border-color: #0697f4;
+    border-radius: 4px;
+    border: none;
+    transition: all 0.9s;
+    height: 23px;
+    margin-top: 3px;
 }
+
 #container input:hover {
     color: #f1f1f1;
     background-color: #151515;
-    border-color: #f00708;
+    border-radius: 15px;
+    transition: all 0.9s;
 }
+
 #container button {
     color: #f1f1f1;
-    background-color: #151515;
-    border-color: #0697f4;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
 }
 
 .container {
     background-color: #2c2c2c;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.oneline {
+    display: flex;
+    flex-wrap: nowrap;
 }
