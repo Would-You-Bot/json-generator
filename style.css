@@ -12,7 +12,8 @@ body {
     text-align: center;
 }
 
-#headings h1, #headings h2{
+#headings h1,
+#headings h2 {
     margin: 0px;
 }
 
@@ -75,6 +76,7 @@ body {
     transition: all 0.9s;
     height: 23px;
     margin-top: 3px;
+    padding: 2% 5%;
 }
 
 #container input:hover {
@@ -106,29 +108,4 @@ body {
 .oneline {
     display: flex;
     flex-wrap: nowrap;
-}
-
-#previewbtn {
-    background-color: transparent;
-    padding: 10px 20px;
-    margin: 20px 0;
-    margin-bottom: 0;
-    border: none;
-    cursor: pointer;
-    width: 50%;
-    border: #f1f1f1 2px solid;
-    border-radius: 50px;
-    transition: all 0.9s ease;
-}
-
-#previewbtn:hover {
-    border-radius: 10px;
-    transition: all 0.5s ease;
-}
-
-#preview-window {
-    text-align: left;
-    border-radius: 20px;
-    background-color: #151515;
-    width: 350px;
 }
