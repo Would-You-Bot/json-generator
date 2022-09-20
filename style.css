@@ -109,3 +109,27 @@ body {
     display: flex;
     flex-wrap: nowrap;
 }
+
+#previewbtn {
+    background-color: transparent;
+    padding: 14px 20px;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+    width: 70%;
+    border: #f1f1f1 2px solid;
+    border-radius: 50px;
+    transition: all 0.9s ease;
+}
+
+#previewbtn:hover {
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+#preview-window {
+    border-radius: 20px;
+    text-align: left;
+    background-color: #151515;
+    width: 360px;
+}

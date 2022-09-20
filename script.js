@@ -29,7 +29,7 @@ function generateJson() {
 document.getElementById("generatebtn").onclick = function () {
   finished = generateJson();
 
-if(filteruseful.length == 0) return alert("You need to add at least one question before exporting");
+  if(finished['useful'].length == 0) return alert("You need to add at least one question before exporting");
 
   const blob = new Blob([JSON.stringify(finished)], {
     type: "application/json",
@@ -71,21 +71,22 @@ document.getElementById("addbtn3").onclick = function () {
   }
 };
 function createInput(id, lastKnownValue) {
+  refreshPreview();
   const container = document.getElementById(id);
   const input = document.createElement("input");
   input.type = "text";
   input.value = lastKnownValue;
   container.append(input)
-    refreshPreview();
 }
-};
 
-document.getElementById("previewbtn").onclick = function refreshPreview(changeState = false) {
+document.getElementById("previewbtn").onclick = function() {refreshPreview(true)}
+
+function refreshPreview(changeState=false) {
   const json = JSON.stringify(generateJson(), undefined, 4);
   var preview = document.getElementById("preview-window");
   if (changeState) {
-    console.log(preview.parentElement.hidden);
     preview.parentElement.hidden = !preview.parentElement.hidden;
   }
   preview.innerHTML = json;
   hljs.highlightAll();
+}
