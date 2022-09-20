@@ -69,19 +69,23 @@ body {
 #container input {
     color: #f1f1f1;
     background-color: #151515;
+    border-radius: 4px;
     border: none;
     transition: all 0.9s;
+    height: 23px;
+    margin-top: 3px;
 }
 
 #container input:hover {
     color: #f1f1f1;
     background-color: #151515;
-    border-radius: 20px;
+    border-radius: 15px;
     transition: all 0.9s;
 }
 
 #container button {
     color: #f1f1f1;
+    cursor: pointer;
     background-color: transparent;
     border: none;
     font-size: 20px;
