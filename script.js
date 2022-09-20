@@ -25,6 +25,8 @@ document.getElementById("generatebtn").onclick = function () {
 
   console.log(finished);
 
+if(filteruseful.length == 0) return alert("You need to add at least one question before exporting");
+
   const blob = new Blob([JSON.stringify(finished)], {
     type: "application/json",
   });
