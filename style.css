@@ -1,6 +1,5 @@
 /* Language: css */
 /* Path: style.css */
-
 * {
     text-decoration: none;
     color: #f1f1f1;
@@ -26,17 +25,16 @@ body {
 .containerbox {
     background-image: linear-gradient(to bottom right, #f00708 , #0697f4 );
     display: flex;
-    position: absolute;
     width: 40rem;
     min-height: 40rem;
     align-items: center;
     justify-content: center;
     left: 50%;
     transform: translate(-50%, 0%);
-    box-shadow: inset #0697f4 2px 0px 20px 0px, #f00708 0px 0px 10px 0px;
     border-radius: 50px;
-    margin-top: 10px;
+    margin-top: 50px;
     margin-bottom: 40px;
+    position: relative;
 }
 
 .containermain {
