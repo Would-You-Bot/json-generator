@@ -73,14 +73,29 @@ document.getElementById("addbtn3").onclick = function () {
 function createInput(id, lastKnownValue) {
   if(!lastKnownValue) {return}
   refreshPreview();
-  const container = document.getElementById(id);
+  const container = document.getElementById(id);const parent = document.createElement('div')
+  const remove = document.createElement('button')
+
+  parent.className = 'oneline';
+  remove.innerHTML = '-';
+  remove.className = 'removeBtn';
+  remove.addEventListener("click", removeButtonEventListener)
+
+
   const input = document.createElement("input");
   input.type = "text";
   input.value = lastKnownValue;
-  container.append(input)
+
+  parent.append(input, remove)
+  container.append(parent)
 }
 
 document.getElementById("previewbtn").onclick = function() {refreshPreview(true)}
+
+const removeButtonEventListener = (e) =>{
+  e.target.parentElement.remove();
+  refreshPreview();
+}
 
 function refreshPreview(changeState=false) {
   const json = JSON.stringify(generateJson(), undefined, 4);
