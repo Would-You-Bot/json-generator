@@ -35,7 +35,6 @@
           <h1 id="first-h">Would You</h1>
           <h2>JSON Generator</h2>
         </div>
-
         <h3>
           Generate would you rather import files using this UI! Press the +
           button to add more!
@@ -71,6 +70,13 @@
         </div>
 
         <button id="generatebtn">Generate JSON file</button>
+
+
+        <div class="file-upload">
+          <input type="file" hidden id="file" accept=".json">
+          <label for="file" class="button">Upload JSON File</label>
+        </div>
+
         <button id="previewbtn">Preview JSON</button>
 
         <pre hidden><code class="language-json" id="preview-window"></code></pre>

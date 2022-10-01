@@ -131,3 +131,27 @@ body {
     background-color: #151515;
     width: 360px;
 }
+
+.file-upload{
+    margin-top: 20px;
+}
+
+.button{
+    background-color: transparent;
+    padding: 14px 20px;
+    margin: 20px 0;
+    cursor: pointer;
+    width: 70%;
+    border: #f1f1f1 2px solid;
+    border-radius: 50px;
+    transition: all 0.9s ease;
+}
+.button:hover {
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+label.button {
+    font-size: 13px;
+    width: 100%;
+    padding: 14px 84px;
+}
