@@ -97,6 +97,37 @@ const removeButtonEventListener = (e) =>{
   refreshPreview();
 }
 
+const onFileChange = (event) => {
+  var reader = new FileReader();
+  reader.onload = onReaderLoad;
+  reader.readAsText(event.target.files[0]);
+}
+
+const onReaderLoad = (event) =>{
+  console.log(event.target.result);
+  const obj = JSON.parse(event.target.result);
+  let parsed = false;
+  if (obj) {
+    if(typeof obj === 'object') {
+      if (obj.hasOwnProperty('useful') && obj.hasOwnProperty('useless') && obj.hasOwnProperty('nsfw')) {
+        for(let [k, v] of Object.entries(obj)) {
+          const id = `container${k}`;
+          if(typeof v === 'object') {
+            parsed = true;
+            v.forEach((v) => {
+              createInput(id, v);
+            })
+          }
+        }
+      }
+    }
+  }
+  if (!parsed) {
+    alert("Error in parsing your JSON file.")
+  }
+}
+document.getElementById('file').addEventListener('change', onFileChange);
+
 function refreshPreview(changeState=false) {
   const json = JSON.stringify(generateJson(), undefined, 4);
   var preview = document.getElementById("preview-window");
