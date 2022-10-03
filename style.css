@@ -25,7 +25,7 @@ body {
 .containerbox {
     background-image: linear-gradient(to bottom right, #f00708 , #0697f4 );
     display: flex;
-    width: 40rem;
+    width: 42%;
     min-height: 40rem;
     align-items: center;
     justify-content: center;
@@ -47,6 +47,7 @@ body {
     flex-wrap: wrap;
     margin: 20px 0px;
     flex-direction: column;
+    padding: 10px 10px 10px 10px;
 }
 
 #generatebtn {
@@ -108,10 +109,10 @@ body {
     flex-wrap: nowrap;
 }
 
-#previewbtn {
+.bottom-btns {
     background-color: transparent;
     padding: 14px 20px;
-    margin: 20px 0;
+    margin: 10px 0;
     border: none;
     cursor: pointer;
     width: 70%;
@@ -120,7 +121,7 @@ body {
     transition: all 0.9s ease;
 }
 
-#previewbtn:hover {
+.bottom-btns:hover {
     border-radius: 10px;
     transition: all 0.5s ease;
 }
@@ -139,7 +140,7 @@ body {
 .button{
     background-color: transparent;
     padding: 14px 20px;
-    margin: 20px 0;
+    margin: 10px 0;
     cursor: pointer;
     width: 70%;
     border: #f1f1f1 2px solid;
@@ -154,4 +155,22 @@ label.button {
     font-size: 13px;
     width: 100%;
     padding: 14px 84px;
+}
+
+@media screen and (max-width: 1000px) {
+    .containerbox {
+      width: 60%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .containerbox {
+      width: 80%;
+    }
+}
+
+@media screen and (max-width: 535px) {
+    .containerbox {
+      width: 100%;
+    }
 }
