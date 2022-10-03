@@ -26,6 +26,15 @@ function generateJson() {
   return finished;
 }
 
+// for dark theme
+
+(function () {
+  
+  document.querySelector(".theme-btn").addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+  })
+})();
+
 document.getElementById("generatebtn").onclick = function () {
   finished = generateJson();
 
