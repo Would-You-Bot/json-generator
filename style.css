@@ -162,3 +162,15 @@ label.button {
     width: 100%;
     padding: 14px 84px;
 }
+
+#social-buttons {
+    padding: 2%;
+    background-color: #151515;
+}
+
+
+img {
+    border-radius: 50%;
+    margin: 20px;
+}
+
