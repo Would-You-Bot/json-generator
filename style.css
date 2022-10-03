@@ -1,157 +1,235 @@
 /* Language: css */
 /* Path: style.css */
+:root {
+  --clr-light: #f1f1f1;
+  --clr-dark: #151515;
+
+  --foreground: var(--clr-light);
+  --background: var(--clr-dark);
+}
+
+.lightmode {
+  --clr-light: #f1f1f1;
+  --clr-dark: #151515;
+
+  --foreground: var(--clr-dark);
+  --background: var(--clr-light);
+}
+
 * {
-    text-decoration: none;
-    color: #f1f1f1;
-    font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  color: var(--foreground);
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-    background-color: #151515;
-    text-align: center;
+  background-color: var(--background);
+  color: var(--foreground);
+  text-align: center;
 }
 
 #headings h1,
 #headings h2 {
-    margin: 0px;
+  margin: 0px;
 }
 
 #headings {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .containerbox {
-    background-image: linear-gradient(to bottom right, #f00708 , #0697f4 );
-    display: flex;
-    width: 40rem;
-    min-height: 40rem;
-    align-items: center;
-    justify-content: center;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    border-radius: 50px;
-    margin-top: 50px;
-    margin-bottom: 40px;
-    position: relative;
+  background-image: linear-gradient(to bottom right, #f00708, #0697f4);
+  display: flex;
+  width: 40rem;
+  min-height: 40rem;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  border-radius: 50px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  position: relative;
 }
 
 .containermain {
-    display: flex;
-    width: 400px;
-    top: 50%;
-    left: 50%;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 20px 0px;
-    flex-direction: column;
+  display: flex;
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+  flex-direction: column;
 }
 
 #generatebtn {
-    background-color: transparent;
-    padding: 14px 20px;
-    margin: 20px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border: #f1f1f1 2px solid;
-    border-radius: 50px;
-    transition: all 0.9s ease;
+  background-color: transparent;
+  padding: 14px 20px;
+  margin: 20px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border: var(--foreground) 2px solid;
+  border-radius: 50px;
+  transition: all 0.9s ease;
 }
 
 #generatebtn:hover {
-    border-radius: 10px;
-    transition: all 0.5s ease;
+  border-radius: 10px;
+  transition: all 0.5s ease;
 }
 
 #container input {
-    color: #f1f1f1;
-    background-color: #151515;
-    border-radius: 4px;
-    border: none;
-    transition: all 0.9s;
-    height: 23px;
-    margin-top: 3px;
-    padding: 2% 5%;
+  color: var(--foreground);
+  background-color: var(--background);
+  border-radius: 4px;
+  border: none;
+  transition: all 0.9s;
+  height: 23px;
+  margin-top: 3px;
+  padding: 2% 5%;
 }
 
 #container input:hover {
-    color: #f1f1f1;
-    background-color: #151515;
-    border-radius: 15px;
-    transition: all 0.9s;
+  color: var(--foreground);
+  background-color: var(--background);
+  border-radius: 15px;
+  transition: all 0.9s;
 }
 
 #container button {
-    color: #f1f1f1;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    font-size: 20px;
+  color: var(--foreground);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
 }
 
 .container {
-    background-color: #2c2c2c;
+  background-color: #2c2c2c;
 }
 
 .list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .oneline {
-    display: flex;
-    flex-wrap: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 #previewbtn {
-    background-color: transparent;
-    padding: 14px 20px;
-    margin: 20px 0;
-    border: none;
-    cursor: pointer;
-    width: 70%;
-    border: #f1f1f1 2px solid;
-    border-radius: 50px;
-    transition: all 0.9s ease;
+  background-color: transparent;
+  padding: 14px 20px;
+  margin: 20px 0;
+  border: none;
+  cursor: pointer;
+  width: 70%;
+  border: var(--foreground) 2px solid;
+  border-radius: 50px;
+  transition: all 0.9s ease;
 }
 
 #previewbtn:hover {
-    border-radius: 10px;
-    transition: all 0.5s ease;
+  border-radius: 10px;
+  transition: all 0.5s ease;
 }
 
 #preview-window {
-    border-radius: 20px;
-    text-align: left;
-    background-color: #151515;
-    width: 360px;
+  border-radius: 20px;
+  text-align: left;
+  background-color: var(--background);
+  width: 360px;
 }
 
-.file-upload{
-    margin-top: 20px;
+.file-upload {
+  margin-top: 20px;
 }
 
-.button{
-    background-color: transparent;
-    padding: 14px 20px;
-    margin: 20px 0;
-    cursor: pointer;
-    width: 70%;
-    border: #f1f1f1 2px solid;
-    border-radius: 50px;
-    transition: all 0.9s ease;
+.button {
+  background-color: transparent;
+  padding: 14px 20px;
+  margin: 20px 0;
+  cursor: pointer;
+  width: 70%;
+  border: var(--foreground) 2px solid;
+  border-radius: 50px;
+  transition: all 0.9s ease;
 }
 .button:hover {
-    border-radius: 10px;
-    transition: all 0.5s ease;
+  border-radius: 10px;
+  transition: all 0.5s ease;
 }
 label.button {
-    font-size: 13px;
-    width: 100%;
-    padding: 14px 84px;
+  font-size: 13px;
+  width: 100%;
+  padding: 14px 84px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  background-color: #c7be18;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#light-mode-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
 }
