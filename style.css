@@ -211,7 +211,8 @@ label.button {
 
 #social-buttons {
     padding: 2%;
-    background-color: #151515;
+    background-color: rgb(21, 21, 21, 0.0);
+    /* opacity: 0.5; */
 }
 
 
