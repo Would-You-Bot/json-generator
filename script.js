@@ -29,16 +29,27 @@ function generateJson() {
 // for dark theme
 
 (function () {
-  
+  if (localStorage.getItem("dark") === "false") {
+    document.body.classList.toggle("light-mode");
+  } else {
+    localStorage.setItem("dark", "true");
+  }
+
   document.querySelector(".theme-btn").addEventListener("click", () => {
-      document.body.classList.toggle("light-mode");
-  })
+    document.body.classList.toggle("light-mode");
+    if (localStorage.getItem("dark") === "true") {
+      localStorage.setItem("dark", "false");
+    } else {
+      localStorage.setItem("dark", "true");
+    }
+  });
 })();
 
 document.getElementById("generatebtn").onclick = function () {
   finished = generateJson();
 
-  if(finished['useful'].length == 0) return alert("You need to add at least one question before exporting");
+  if (finished["useful"].length == 0)
+    return alert("You need to add at least one question before exporting");
 
   const blob = new Blob([JSON.stringify(finished)], {
     type: "application/json",
@@ -57,17 +68,17 @@ document.getElementById("addbtn1").onclick = function () {
   const inputs = document.querySelectorAll("#containeruseful input");
   var lastInput = inputs.item(inputs.length - 1);
 
-  if(lastInput.value) {
+  if (lastInput.value) {
     createInput("containeruseful", inputs[0].value);
-    inputs[0].value = ""
+    inputs[0].value = "";
   }
 };
 document.getElementById("addbtn2").onclick = function () {
   const inputs = document.querySelectorAll("#containeruseless input");
-  var lastInput = inputs.item(inputs.length-1);
-  if(lastInput.value) {
+  var lastInput = inputs.item(inputs.length - 1);
+  if (lastInput.value) {
     createInput("containeruseless", inputs[0].value);
-    inputs[0].value = ""
+    inputs[0].value = "";
   }
 };
 document.getElementById("addbtn3").onclick = function () {
@@ -76,68 +87,76 @@ document.getElementById("addbtn3").onclick = function () {
 
   if (lastInput.value) {
     createInput("containernsfw", inputs[0].value);
-    inputs[0].value = ""
+    inputs[0].value = "";
   }
 };
 function createInput(id, lastKnownValue) {
-  if(!lastKnownValue) {return}
+  if (!lastKnownValue) {
+    return;
+  }
   refreshPreview();
-  const container = document.getElementById(id);const parent = document.createElement('div')
-  const remove = document.createElement('button')
+  const container = document.getElementById(id);
+  const parent = document.createElement("div");
+  const remove = document.createElement("button");
 
-  parent.className = 'oneline';
-  remove.innerHTML = '-';
-  remove.className = 'removeBtn';
-  remove.addEventListener("click", removeButtonEventListener)
-
+  parent.className = "oneline";
+  remove.innerHTML = "-";
+  remove.className = "removeBtn";
+  remove.addEventListener("click", removeButtonEventListener);
 
   const input = document.createElement("input");
   input.type = "text";
   input.value = lastKnownValue;
 
-  parent.append(input, remove)
-  container.append(parent)
+  parent.append(input, remove);
+  container.append(parent);
 }
 
-document.getElementById("previewbtn").onclick = function() {refreshPreview(true)}
+document.getElementById("previewbtn").onclick = function () {
+  refreshPreview(true);
+};
 
-const removeButtonEventListener = (e) =>{
+const removeButtonEventListener = (e) => {
   e.target.parentElement.remove();
   refreshPreview();
-}
+};
 
 const onFileChange = (event) => {
   var reader = new FileReader();
   reader.onload = onReaderLoad;
   reader.readAsText(event.target.files[0]);
-}
+};
 
-const onReaderLoad = (event) =>{
+const onReaderLoad = (event) => {
   console.log(event.target.result);
   const obj = JSON.parse(event.target.result);
   let parsed = false;
   if (obj) {
-    if(typeof obj === 'object') {
-      if (obj.hasOwnProperty('useful') && obj.hasOwnProperty('useless') && obj.hasOwnProperty('nsfw')) {
-        for(let [k, v] of Object.entries(obj)) {
+    if (typeof obj === "object") {
+      if (
+        obj.hasOwnProperty("useful") &&
+        obj.hasOwnProperty("useless") &&
+        obj.hasOwnProperty("nsfw")
+      ) {
+        for (let [k, v] of Object.entries(obj)) {
           const id = `container${k}`;
-          if(typeof v === 'object') {
+          if (typeof v === "object") {
             parsed = true;
             v.forEach((v) => {
               createInput(id, v);
-            })
+            });
           }
         }
       }
     }
   }
   if (!parsed) {
-    alert("Error in parsing your JSON file.")
+    alert("Error in parsing your JSON file.");
   }
-}
-document.getElementById('file').addEventListener('change', onFileChange);
+};
+document.getElementById("file").addEventListener("change", onFileChange);
 
-function refreshPreview(changeState=false) {
+function refreshPreview(changeState = false) {
   const json = JSON.stringify(generateJson(), undefined, 4);
   var preview = document.getElementById("preview-window");
   if (changeState) {
