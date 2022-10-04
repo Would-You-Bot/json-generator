@@ -4,16 +4,62 @@
     text-decoration: none;
 }
 
+/* for dark theme */
+:root {
+    --color-primary: #191d2b;
+    --color-white: #FFFFFF;
+    --color-grey-2: #b2becd;   
+    --color-grey-4: #454e56;
+    --br-sm-2: 14px;
+    --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
+}
+
+.light-mode {
+    --color-primary: #FFFFFF;
+    --color-white: #454e56;
+    --color-grey-2: #6c7983;
+    --color-grey-4: #454e56; 
+}
+
 body {
-    background-color: #151515;
+    background-color: var(--color-primary);
     text-align: center;
-    color: #f1f1f1;
+    color:var(--color-white);
     font-family: 'Source Code Pro', monospace;
 }
+
+/* css for button */
+
+.theme-btn {
+    top: 5%;
+    right: 3%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--color-grey-4);
+    cursor: pointer;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.1s ease-in-out;
+  }
+
+  .theme-btn:active {
+    transform: translateY(-3px);
+  }
+
+  .theme-btn i {
+    font-size: 1.4rem;
+    color: var(--color-grey-2);
+    pointer-events: none;
+  }
 
 #headings h1,
 #headings h2 {
     margin: 0px;
+    color: white;
 }
 
 #headings {
