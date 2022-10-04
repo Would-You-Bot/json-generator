@@ -2,18 +2,64 @@
 /* Path: style.css */
 * {
     text-decoration: none;
-    color: #f1f1f1;
-    font-family: 'Poppins', sans-serif;
+}
+
+/* for dark theme */
+:root {
+    --color-primary: #191d2b;
+    --color-white: #FFFFFF;
+    --color-grey-2: #b2becd;   
+    --color-grey-4: #454e56;
+    --br-sm-2: 14px;
+    --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
+}
+
+.light-mode {
+    --color-primary: #FFFFFF;
+    --color-white: #454e56;
+    --color-grey-2: #6c7983;
+    --color-grey-4: #454e56; 
 }
 
 body {
-    background-color: #151515;
+    background-color: var(--color-primary);
     text-align: center;
+    color:var(--color-white);
+    font-family: 'Source Code Pro', monospace;
 }
+
+/* css for button */
+
+.theme-btn {
+    top: 5%;
+    right: 3%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--color-grey-4);
+    cursor: pointer;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.1s ease-in-out;
+  }
+
+  .theme-btn:active {
+    transform: translateY(-3px);
+  }
+
+  .theme-btn i {
+    font-size: 1.4rem;
+    color: var(--color-grey-2);
+    pointer-events: none;
+  }
 
 #headings h1,
 #headings h2 {
     margin: 0px;
+    color: white;
 }
 
 #headings {
@@ -59,6 +105,7 @@ body {
     width: 100%;
     border: #f1f1f1 2px solid;
     border-radius: 50px;
+    color: lightblue;
     transition: all 0.9s ease;
 }
 
@@ -67,6 +114,10 @@ body {
     transition: all 0.5s ease;
 }
 
+#container{
+    font-family: 'Abyssinica SIL', serif;
+    color: navajowhite;
+}
 #container input {
     color: #f1f1f1;
     background-color: #151515;
@@ -119,6 +170,7 @@ body {
     border: #f1f1f1 2px solid;
     border-radius: 50px;
     transition: all 0.9s ease;
+    color: wheat;
 }
 
 .bottom-btns:hover {
@@ -135,6 +187,7 @@ body {
 
 .file-upload{
     margin-top: 20px;
+    color: wheat;
 }
 
 .button{
