@@ -126,7 +126,7 @@ document.getElementById("previewbtn").onclick = function () {
 };
 
 const onFileChange = (event) => {
-  var reader = new FileReader();
+  let reader = new FileReader();
   reader.onload = onReaderLoad;
   reader.readAsText(event.target.files[0]);
 };
