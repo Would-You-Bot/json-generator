@@ -12,3 +12,22 @@
 ## Want to contribute?
 - Take a look at [`contributing guidelines`](Contributing.md).
 - Refer [GitHub Flow](https://guides.github.com/introduction/flow). 
+
+
+## Contributors
+
+**Thanks goes to these wonderful people ❤️**
+
+<br/>
+<div align="center">
+<a href="https://github.com/Would-You-Bot/json-generator/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Would-You-Bot/json-generator&max=100&columns=11" width=97%/>
+</a>
+</div>
+
+<br>
+<br>
+<hr>
+<h6 align="center">© Json Generator 2022 
+<br>
+All Rights Reserved</h6>
