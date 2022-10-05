@@ -9,6 +9,11 @@
 <img src="https://forthebadge.com/images/badges/built-with-love.svg" alt=" forks"/>
 </p>
 
+## How to run the project
+- Install the [VSCode Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) Extention.
+- Navigate to the [`html file`](src/index.html).
+- Start the Live Server.
+
 ## Want to contribute?
 - Take a look at [`contributing guidelines`](Contributing.md).
 - Refer [GitHub Flow](https://guides.github.com/introduction/flow). 
