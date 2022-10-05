@@ -71,6 +71,7 @@ document.getElementById("addbtn1").onclick = function () {
   if (lastInput.value) {
     createInput("containeruseful", inputs[0].value);
     inputs[0].value = "";
+    inputs[0].focus();
   }
 };
 document.getElementById("addbtn2").onclick = function () {
@@ -79,6 +80,7 @@ document.getElementById("addbtn2").onclick = function () {
   if (lastInput.value) {
     createInput("containeruseless", inputs[0].value);
     inputs[0].value = "";
+    inputs[0].focus();
   }
 };
 document.getElementById("addbtn3").onclick = function () {
@@ -88,8 +90,15 @@ document.getElementById("addbtn3").onclick = function () {
   if (lastInput.value) {
     createInput("containernsfw", inputs[0].value);
     inputs[0].value = "";
+    inputs[0].focus();
   }
 };
+
+const removeButtonEventListener = (e) => {
+  e.target.parentElement.remove();
+  refreshPreview();
+};
+
 function createInput(id, lastKnownValue) {
   if (!lastKnownValue) {
     return;
@@ -114,11 +123,6 @@ function createInput(id, lastKnownValue) {
 
 document.getElementById("previewbtn").onclick = function () {
   refreshPreview(true);
-};
-
-const removeButtonEventListener = (e) => {
-  e.target.parentElement.remove();
-  refreshPreview();
 };
 
 const onFileChange = (event) => {
