@@ -1,3 +1,5 @@
+const toggleIcon = document.querySelector("#toggle-icon");
+
 function generateJson() {
   var arrayuseful = [];
   $("#containeruseful :input").each(function (e) {
@@ -31,6 +33,8 @@ function generateJson() {
 (function () {
   if (localStorage.getItem("dark") === "false") {
     document.body.classList.toggle("light-mode");
+    toggleIcon.classList.remove("fa-sun");
+    toggleIcon.classList.add("fa-moon");
   } else {
     localStorage.setItem("dark", "true");
   }
@@ -39,8 +43,12 @@ function generateJson() {
     document.body.classList.toggle("light-mode");
     if (localStorage.getItem("dark") === "true") {
       localStorage.setItem("dark", "false");
+      toggleIcon.classList.remove("fa-sun");
+      toggleIcon.classList.add("fa-moon");
     } else {
       localStorage.setItem("dark", "true");
+      toggleIcon.classList.remove("fa-moon");
+      toggleIcon.classList.add("fa-sun");
     }
   });
 })();

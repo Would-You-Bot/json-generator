@@ -31,10 +31,10 @@ body {
 /* css for button */
 
 .theme-btn {
-    top: 5%;
-    right: 3%;
-    width: 70px;
-    height: 70px;
+    top: 2%;
+    right: 4%;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background-color: var(--color-grey-4);
     cursor: pointer;
