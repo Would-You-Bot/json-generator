@@ -66,7 +66,7 @@ function generateJson() {
 document.getElementById("generatebtn").onclick = function () {
   finished = generateJson();
 
-  if (finished["useful"].length == 0)
+  if (finished["useful"].length == 0 && finished["useless"].length == 0 && finished["nsfw"].length == 0)
     return alert("You need to add at least one question before exporting");
     
   svgContainer.classList.remove('hide'); //making visible
