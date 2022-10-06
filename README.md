@@ -15,7 +15,7 @@
 - Start the Live Server.
 
 ## Want to contribute?
-- Take a look at [`contributing guidelines`](Contributing.md).
+- Take a look at [`contributing guidelines`](CONTRIBUTING.md).
 - Refer [GitHub Flow](https://guides.github.com/introduction/flow). 
 
 
