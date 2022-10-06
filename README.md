@@ -11,7 +11,7 @@
 
 ## How to run the project
 - Install the [VSCode Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) Extention.
-- Navigate to the [`html file`](src/index.html).
+- Navigate to the [`html file`](index.html).
 - Start the Live Server.
 
 ## Want to contribute?
