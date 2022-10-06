@@ -47,7 +47,7 @@ body {
   }
 
   .theme-btn:active {
-    transform: translateY(-3px);
+      translate: 0 -3px;
   }
 
   .theme-btn i {
@@ -76,7 +76,7 @@ body {
     align-items: center;
     justify-content: center;
     left: 50%;
-    transform: translate(-50%, 0%);
+    translate: -50% 0;
     border-radius: 50px;
     margin-top: 50px;
     margin-bottom: 40px;
