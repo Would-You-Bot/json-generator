@@ -1,157 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=	, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="scrollbar.css" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="title" content="Would You - Json Generator" />
-    <meta
-      name="description"
-      content="Create custom would you rather questions for our discord bot using this simple ui tool!"
-    />
-    <meta
-      name="keywords"
-      content="discord, bot, discord bot, would you rather, would you bot"
-    />
-    <meta name="robots" content="index, follow" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="language" content="English" />
-    <meta name="revisit-after" content="7 days" />
 
-    <!-- dark mode -->
-    <script
-      src="https://kit.fontawesome.com/ddea64692c.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- stop -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=	, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="scrollbar.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="title" content="Would You - Json Generator" />
+  <meta name="description"
+    content="Create custom would you rather questions for our discord bot using this simple ui tool!" />
+  <meta name="keywords" content="discord, bot, discord bot, would you rather, would you bot" />
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Goldman&family=Source+Code+Pro&display=swap"
-      rel="stylesheet"
-    />
+  <!-- dark mode -->
+  <script src="https://kit.fontawesome.com/ddea64692c.js" crossorigin="anonymous"></script>
+  <!-- stop -->
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Goldman&family=Source+Code+Pro&display=swap" rel="stylesheet">
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+  <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/go.min.js"></script>
-    <title>Would You - Json Generator</title>
-  </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <body>
-    <div class="containerbox">
-      <div class="containermain">
-        <div id="headings">
-          <h1 id="first-h">Would You</h1>
-          <h2>JSON Generator</h2>
-        </div>
-        <h3 style="color: #a7ffe4">
-          Generate would you rather import files using this UI! Press the +
-          button to add more!
-        </h3>
-        <div id="cont-div">
-          <div id="container">
-            <h2>Useful👍</h2>
-            <div id="containeruseful" class="list">
-              <div class="oneline">
-                <input type="text" />
-                <button id="addbtn1">+</button>
-              </div>
-            </div>
-          </div>
-          <div id="container">
-            <h2>Useless👎</h2>
-            <div id="containeruseless" class="list">
-              <div class="oneline">
-                <input type="text" />
-                <button id="addbtn2">+</button>
-              </div>
-            </div>
-          </div>
-          <div id="container">
-            <h2>NSFW🔞</h2>
-            <div id="containernsfw" class="list">
-              <div class="oneline">
-                <input type="text" />
-                <button id="addbtn3">+</button>
-              </div>
+  
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/go.min.js"></script>
+  <title>Would You - Json Generator</title>
+</head>
+
+<body>
+  <div class="containerbox">
+      <!-- button for darkmode -->
+  
+    <div class="theme-btn">
+      <i class="fas fa-sun" id="toggle-icon"></i>
+    </div>
+    <div class="containermain">
+      <div id="headings">
+        <h1 id="first-h">Would You</h1>
+        <h2>JSON Generator</h2>
+      </div>
+      <h3 style="color: #A7FFE4;">
+        Generate would you rather import files using this UI! Press the +
+        button to add more!
+      </h3>
+      <div id="cont-div">
+        <div id="container">
+          <h2>Useful👍</h2>
+          <div id="containeruseful" class="list">
+            <div class="oneline">
+              <input type="text" />
+              <button id="addbtn1">+</button>
             </div>
           </div>
         </div>
+        <div id="container">
+          <h2>Useless👎</h2>
+          <div id="containeruseless" class="list">
+            <div class="oneline">
+              <input type="text" />
+              <button id="addbtn2">+</button>
+            </div>
+          </div>
+        </div>
+        <div id="container">
+          <h2>NSFW🔞</h2>
+          <div id="containernsfw" class="list">
+            <div class="oneline">
+              <input type="text" />
+              <button id="addbtn3">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <button id="generatebtn">
+      <button id="generatebtn">
           Generate JSON file
           <div class="svg hide" id="svg"></div>
-        </button>
+      </button>
 
-        <div class="file-upload">
-          <input type="file" hidden id="file" accept=".json" />
-        </div>
 
-        <label for="file" class="bottom-btns">Upload JSON File</label>
-        <button id="previewbtn" class="bottom-btns">Preview JSON</button>
-
-        <pre
-          hidden
-        ><code class="language-json" id="preview-window"></code></pre>
+      <div class="file-upload">
+        <input type="file" hidden id="file" accept=".json">
       </div>
-    </div>
 
-    <div id="social-buttons">
-      <a href="https://discord.gg/vMyXAxEznS" target="_blank"
-        ><img
-          src="assets/discordicon.png"
-          alt="discord logo"
-          width="50"
-          height="50"
-      /></a>
-      <a href="https://github.com/Would-You-Bot/json-generator" target="_blank"
-        ><img
-          src="assets/githubicon.png"
-          alt="discord logo"
-          width="50"
-          height="50"
-      /></a>
-    </div>
-    <div
-      style="
-        color: rgb(136, 136, 136);
-        margin-bottom: 20px;
-        background-color: rgb(0, 0, 0, 0);
-      "
-    >
-      Copyright &copy; 2022 All Rights Reserved by Would You.
-    </div>
+      <label for="file" class="bottom-btns">Upload JSON File</label>
+      <button id="previewbtn" class="bottom-btns">Preview JSON</button>
 
-    <!-- button for darkmode -->
-
-    <div class="theme-btn">
-      <i class="fas fa-adjust"></i>
+      <pre hidden><code class="language-json" id="preview-window"></code></pre>
     </div>
+  </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script
+  <div id="social-buttons">
+    <a href="https://discord.gg/vMyXAxEznS" target="_blank"><img src="assets/discordicon.png" alt="discord logo" width="50" height="50"></a>
+    <a href="https://github.com/Would-You-Bot/json-generator" target="_blank"><img src="assets/githubicon.png" alt="discord logo" width="50" height="50"></a>
+    
+    </div>
+    <div style="color: rgb(136, 136, 136); margin-bottom: 20px; background-color: rgb(0, 0, 0, 0.0);">Copyright &copy; 2022 All Rights Reserved by Would You.</div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script
       src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"
       integrity="sha512-yAr4fN9WZH6hESbOwoFZGtSgOP+LSZbs/JeoDr02pOX4yUFfI++qC9YwIQXIGffhnzliykJtdWTV/v3PxSz8aw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>
