@@ -1,3 +1,13 @@
+const svgContainer = document.getElementById('svg');
+// Setting up bodymovin animation
+const animItem = bodymovin.loadAnimation({
+  wrapper: svgContainer,
+  animType: 'svg',
+  loop: false,
+  autoplay: false,
+  path: 'https://assets4.lottiefiles.com/packages/lf20_Jp1pCorlFf.json',
+});
+
 const toggleIcon = document.querySelector("#toggle-icon");
 
 function generateJson() {
@@ -56,9 +66,12 @@ function generateJson() {
 document.getElementById("generatebtn").onclick = function () {
   finished = generateJson();
 
-  if (finished["useful"].length == 0)
+  if (finished["useful"].length == 0 && finished["useless"].length == 0 && finished["nsfw"].length == 0)
     return alert("You need to add at least one question before exporting");
-
+    
+  svgContainer.classList.remove('hide'); //making visible
+  animItem.goToAndPlay(0, true); //resetting animation
+  
   const blob = new Blob([JSON.stringify(finished)], {
     type: "application/json",
   });
@@ -177,3 +190,5 @@ function refreshPreview(changeState = false) {
   preview.innerHTML = json;
   hljs.highlightAll();
 }
+// Lottie
+animItem.addEventListener('complete', () => svgContainer.classList.add('hide')); //Adding back the hide class once animation is complete

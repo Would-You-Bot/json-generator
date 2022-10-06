@@ -238,3 +238,14 @@ img {
     margin: 20px;
 }
 
+/* Lottie Animation */
+.svg {
+  width: 40rem;
+  position: absolute;
+  left: 50%;
+  pointer-events: none;
+  translate: -48% -50%;
+}
+.hide {
+  display: none;
+}
