@@ -3,9 +3,6 @@
 * {
   text-decoration: none;
 }
-body {
-  overflow-x: hidden;
-}
 
 /* for dark theme */
 :root {
@@ -58,6 +55,7 @@ body {
   color: var(--color-grey-2);
   pointer-events: none;
 }
+
 @media (max-width: 420px) {
   .theme-btn i {
     font-size: 1.2rem;
@@ -67,7 +65,6 @@ body {
     height: 50px;
   }
 }
-
 #headings h1,
 #headings h2 {
   margin: 0px;
@@ -240,7 +237,6 @@ label.bottom-btns {
     width: 200px !important;
   }
 }
-
 #social-buttons {
   padding: 2%;
   background-color: rgb(21, 21, 21, 0);
@@ -250,4 +246,16 @@ label.bottom-btns {
 img {
   border-radius: 50%;
   margin: 20px;
+}
+
+/* Lottie Animation */
+.svg {
+  width: 40rem;
+  position: absolute;
+  left: 50%;
+  pointer-events: none;
+  translate: -48% -50%;
+}
+.hide {
+  display: none;
 }
