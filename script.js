@@ -10,6 +10,10 @@ const animItem = bodymovin.loadAnimation({
 
 const toggleIcon = document.querySelector("#toggle-icon");
 
+function isEmptyOrSpaces(str) {
+  return str === null || str.match(/^ *$/) !== null;
+}
+
 function generateJson() {
   var arrayuseful = [];
   $("#containeruseful :input").each(function (e) {
@@ -68,10 +72,10 @@ document.getElementById("generatebtn").onclick = function () {
 
   if (finished["useful"].length == 0 && finished["useless"].length == 0 && finished["nsfw"].length == 0)
     return alert("You need to add at least one question before exporting");
-    
+
   svgContainer.classList.remove('hide'); //making visible
   animItem.goToAndPlay(0, true); //resetting animation
-  
+
   const blob = new Blob([JSON.stringify(finished)], {
     type: "application/json",
   });
@@ -87,6 +91,8 @@ document.getElementById("generatebtn").onclick = function () {
 
 document.getElementById("addbtn1").onclick = function () {
   const inputs = document.querySelectorAll("#containeruseful input");
+  document.getElementById("error1").innerHTML = "";
+  if (isEmptyOrSpaces(inputs[0].value)) return document.getElementById("error1").innerHTML = "No empty string allowed";
   var lastInput = inputs.item(inputs.length - 1);
 
   if (lastInput.value) {
@@ -97,6 +103,8 @@ document.getElementById("addbtn1").onclick = function () {
 };
 document.getElementById("addbtn2").onclick = function () {
   const inputs = document.querySelectorAll("#containeruseless input");
+  document.getElementById("error2").innerHTML = "";
+  if (isEmptyOrSpaces(inputs[0].value)) return document.getElementById("error2").innerHTML = "No empty string allowed";
   var lastInput = inputs.item(inputs.length - 1);
   if (lastInput.value) {
     createInput("containeruseless", inputs[0].value);
@@ -107,7 +115,8 @@ document.getElementById("addbtn2").onclick = function () {
 document.getElementById("addbtn3").onclick = function () {
   const inputs = document.querySelectorAll("#containernsfw input");
   var lastInput = inputs.item(inputs.length - 1);
-
+  document.getElementById("error3").innerHTML = "";
+  if (isEmptyOrSpaces(inputs[0].value)) return document.getElementById("error3").innerHTML = "No empty string allowed";
   if (lastInput.value) {
     createInput("containernsfw", inputs[0].value);
     inputs[0].value = "";
@@ -163,6 +172,15 @@ const onReaderLoad = (event) => {
         obj.hasOwnProperty("useless") &&
         obj.hasOwnProperty("nsfw")
       ) {
+        obj.useful.forEach((e) => { 
+          if (isEmptyOrSpaces(e)) return alert("Your export file has one or many empty question");
+        });
+        obj.useless.forEach((e) => { 
+          if (isEmptyOrSpaces(e)) return alert("Your export file has one or many empty question");
+        });
+        obj.nsfw.forEach((e) => { 
+          if (isEmptyOrSpaces(e)) return alert("Your export file has one or many empty question");
+        });
         for (let [k, v] of Object.entries(obj)) {
           const id = `container${k}`;
           if (typeof v === "object") {
