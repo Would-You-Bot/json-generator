@@ -18,6 +18,11 @@
 - Take a look at [`contributing guidelines`](CONTRIBUTING.md).
 - Refer [GitHub Flow](https://guides.github.com/introduction/flow). 
 
+## Why should I contribute?
+- You can help a small project grow and improve it.
+- You can earn points during [hacktoberfest](https://hacktoberfest.com/).
+- You can earn yourself a special contributor/helper role on our [discord server](discord.gg/vMyXAxEznS)
+
 
 ## Contributors
 
