@@ -165,6 +165,7 @@ const onReaderLoad = (event) => {
   console.log(event.target.result);
   const obj = JSON.parse(event.target.result);
   let parsed = false;
+  let ended = false;
   if (obj) {
     if (typeof obj === "object") {
       if (
@@ -172,15 +173,25 @@ const onReaderLoad = (event) => {
         obj.hasOwnProperty("useless") &&
         obj.hasOwnProperty("nsfw")
       ) {
-        obj.useful.forEach((e) => { 
-          if (isEmptyOrSpaces(e)) return alert("Your export file has one or many empty question");
+        obj.useful.forEach((e) => {
+          if (isEmptyOrSpaces(e)) {
+            ended = true;
+            alert("Your export file has one or many empty question");
+          }
         });
-        obj.useless.forEach((e) => { 
-          if (isEmptyOrSpaces(e)) return alert("Your export file has one or many empty question");
+        obj.useless.forEach((e) => {
+          if (isEmptyOrSpaces(e)) {
+            ended = true;
+            alert("Your export file has one or many empty question");
+          }
         });
-        obj.nsfw.forEach((e) => { 
-          if (isEmptyOrSpaces(e)) return alert("Your export file has one or many empty question");
+        obj.nsfw.forEach((e) => {
+          if (isEmptyOrSpaces(e)) {
+            ended = true;
+            alert("Your export file has one or many empty question");
+          }
         });
+        if (ended) return;
         for (let [k, v] of Object.entries(obj)) {
           const id = `container${k}`;
           if (typeof v === "object") {
