@@ -72,6 +72,9 @@ body {
 	margin: 0px;
 	color: white;
 }
+#error1, #error2, #error3 {
+	margin-left: -50px;
+}
 
 #headings {
 	display: flex;
