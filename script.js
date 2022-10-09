@@ -69,10 +69,18 @@ function generateJson() {
 
 document.getElementById("generatebtn").onclick = function () {
   finished = generateJson();
-  finished["useful"] = finished["useful"].filter(function(entry) { return entry.trim() != ''; })
-  finished["useless"] = finished["useless"].filter(function(entry) { return entry.trim() != ''; })
-  finished["nsfw"] = finished["nsfw"].filter(function(entry) { return entry.trim() != ''; })
-  if (finished["useful"].length == 0 && finished["useless"].length == 0 && finished["nsfw"].length == 0)
+  let empty = false;
+  finished["useful"].forEach(e => {
+     if (isEmptyOrSpaces(e)) empty = true;
+  })
+  finished["useless"].forEach(e => {
+    if (isEmptyOrSpaces(e)) empty = true;
+ })
+ finished["nsfw"].forEach(e => {
+  if (isEmptyOrSpaces(e)) empty = true;
+})
+if (empty) return alert("You can't have empty fields!");
+if (finished["useful"].length == 0 && finished["useless"].length == 0 && finished["nsfw"].length == 0)
     return alert("You need to add at least one question before exporting");
     
   svgContainer.classList.remove('hide'); //making visible
