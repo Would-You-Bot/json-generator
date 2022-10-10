@@ -101,8 +101,7 @@ if (finished["useful"].length == 0 && finished["useless"].length == 0 && finishe
 
 document.getElementById("addbtn1").onclick = function () {
   let value = generateJson();
-  if (value.useful.filter(entry => /\S/.test(entry)).length !== value.useful.length) return document.getElementById("error1").textContent = "You can't have empty fields!";
-  document.getElementById("error1").textContent = "";
+  if (value.useful.filter(entry => /\S/.test(entry)).length !== value.useful.length) return alert("You can't have empty fields!");
   const inputs = document.querySelectorAll("#containeruseful input");
   var lastInput = inputs.item(inputs.length - 1);
 
@@ -114,8 +113,7 @@ document.getElementById("addbtn1").onclick = function () {
 };
 document.getElementById("addbtn2").onclick = function () {
   let value = generateJson();
-  if (value.useless.filter(entry => /\S/.test(entry)).length !== value.useless.length) return document.getElementById("error2").textContent = "You can't have empty fields!";
-  document.getElementById("error2").textContent = "";
+  if (value.useless.filter(entry => /\S/.test(entry)).length !== value.useless.length) return alert("You can't have empty fields!");
   const inputs = document.querySelectorAll("#containeruseless input");
   var lastInput = inputs.item(inputs.length - 1);
   if (lastInput.value) {
@@ -127,8 +125,7 @@ document.getElementById("addbtn2").onclick = function () {
 document.getElementById("addbtn3").onclick = function () {
   let value = generateJson();
   console.log(value.nsfw)
-  if (value.nsfw.filter(entry => /\S/.test(entry)).length !== value.nsfw.length) return document.getElementById("error3").textContent = "You can't have empty fields!";
-  document.getElementById("error3").textContent = "";
+  if (value.nsfw.filter(entry => /\S/.test(entry)).length !== value.nsfw.length) return alert("You can't have empty fields!");
   const inputs = document.querySelectorAll("#containernsfw input");
   var lastInput = inputs.item(inputs.length - 1);
 
