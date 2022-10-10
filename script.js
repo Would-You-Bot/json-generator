@@ -206,7 +206,14 @@ function refreshPreview(changeState = false) {
   const json = JSON.stringify(generateJson(), undefined, 4);
   var preview = document.getElementById("preview-window");
   if (changeState) {
-    preview.parentElement.hidden = !preview.parentElement.hidden;
+    if (preview.parentElement.classList.contains("previewHidden")) {
+      preview.parentElement.classList.remove("previewHidden");
+      preview.parentElement.classList.add("previewVisible");
+    }
+    else {
+      preview.parentElement.classList.remove("previewVisible");
+      preview.parentElement.classList.add("previewHidden");
+    }
   }
   preview.innerHTML = json;
   hljs.highlightAll();
