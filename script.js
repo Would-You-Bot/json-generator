@@ -10,6 +10,10 @@ const animItem = bodymovin.loadAnimation({
 
 const toggleIcon = document.querySelector("#toggle-icon");
 
+function isEmptyOrSpaces(str) {
+  return str === null || str.match(/^ *$/) !== null;
+}
+
 function generateJson() {
   var arrayuseful = [];
   $("#containeruseful :input").each(function (e) {
@@ -65,8 +69,18 @@ function generateJson() {
 
 document.getElementById("generatebtn").onclick = function () {
   finished = generateJson();
-
-  if (finished["useful"].length == 0 && finished["useless"].length == 0 && finished["nsfw"].length == 0)
+  let empty = false;
+  finished["useful"].forEach(e => {
+     if (isEmptyOrSpaces(e)) empty = true;
+  })
+  finished["useless"].forEach(e => {
+    if (isEmptyOrSpaces(e)) empty = true;
+ })
+ finished["nsfw"].forEach(e => {
+  if (isEmptyOrSpaces(e)) empty = true;
+})
+if (empty) return alert("You can't have empty fields!");
+if (finished["useful"].length == 0 && finished["useless"].length == 0 && finished["nsfw"].length == 0)
     return alert("You need to add at least one question before exporting");
     
   svgContainer.classList.remove('hide'); //making visible
@@ -86,6 +100,8 @@ document.getElementById("generatebtn").onclick = function () {
 };
 
 document.getElementById("addbtn1").onclick = function () {
+  let value = generateJson();
+  if (value.useful.filter(entry => /\S/.test(entry)).length !== value.useful.length) return alert("You can't have empty fields!");
   const inputs = document.querySelectorAll("#containeruseful input");
   var lastInput = inputs.item(inputs.length - 1);
 
@@ -96,6 +112,8 @@ document.getElementById("addbtn1").onclick = function () {
   }
 };
 document.getElementById("addbtn2").onclick = function () {
+  let value = generateJson();
+  if (value.useless.filter(entry => /\S/.test(entry)).length !== value.useless.length) return alert("You can't have empty fields!");
   const inputs = document.querySelectorAll("#containeruseless input");
   var lastInput = inputs.item(inputs.length - 1);
   if (lastInput.value) {
@@ -105,6 +123,9 @@ document.getElementById("addbtn2").onclick = function () {
   }
 };
 document.getElementById("addbtn3").onclick = function () {
+  let value = generateJson();
+  console.log(value.nsfw)
+  if (value.nsfw.filter(entry => /\S/.test(entry)).length !== value.nsfw.length) return alert("You can't have empty fields!");
   const inputs = document.querySelectorAll("#containernsfw input");
   var lastInput = inputs.item(inputs.length - 1);
 
@@ -153,9 +174,9 @@ const onFileChange = (event) => {
 };
 
 const onReaderLoad = (event) => {
-  console.log(event.target.result);
   const obj = JSON.parse(event.target.result);
   let parsed = false;
+
   if (obj) {
     if (typeof obj === "object") {
       if (
@@ -168,7 +189,7 @@ const onReaderLoad = (event) => {
           if (typeof v === "object") {
             parsed = true;
             v.forEach((v) => {
-              createInput(id, v);
+              if (!isEmptyOrSpaces(v)) createInput(id, v);
             });
           }
         }
