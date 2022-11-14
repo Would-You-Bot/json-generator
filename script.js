@@ -55,8 +55,7 @@ const onReaderLoad = (event) => {
     if (typeof obj === "object") {
       if (
         obj.hasOwnProperty("useful") &&
-        obj.hasOwnProperty("useless") &&
-        obj.hasOwnProperty("nsfw")
+        obj.hasOwnProperty("useless")
       ) {
         for (let [k, v] of Object.entries(obj)) {
           const id = `container${k}`;
@@ -104,19 +103,7 @@ document.getElementById("addbtn2").onclick = function () {
     inputs[0].focus();
   }
 };
-document.getElementById("addbtn3").onclick = function () {
-  let value = generateJson();
-  console.log(value.nsfw)
-  if (value.nsfw.filter(entry => /\S/.test(entry)).length !== value.nsfw.length) return alert("You can't have empty fields!");
-  const inputs = document.querySelectorAll("#containernsfw input");
-  var lastInput = inputs.item(inputs.length - 1);
 
-  if (lastInput.value) {
-    createInput("containernsfw", inputs[0].value);
-    inputs[0].value = "";
-    inputs[0].focus();
-  }
-};
 document.getElementById("previewbtn").onclick = function () {
   refreshPreview(true);
 };

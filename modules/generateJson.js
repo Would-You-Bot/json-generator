@@ -9,15 +9,9 @@ export default function generateJson() {
     arrayuseless.push(this.value);
   });
   const filteruseless = arrayuseless.filter((a) => a);
-  var arraynsfw = [];
-  $("#containernsfw :input").each(function (e) {
-    arraynsfw.push(this.value);
-  });
-  const filternsfw = arraynsfw.filter((a) => a);
   const finished = {
     useful: filteruseful,
     useless: filteruseless,
-    nsfw: filternsfw,
   };
   return finished;
 }

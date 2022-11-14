@@ -19,11 +19,8 @@ document.getElementById("generatebtn").onclick = function () {
     finished["useless"].forEach(e => {
       if (isEmptyOrSpaces(e)) empty = true;
    })
-   finished["nsfw"].forEach(e => {
-    if (isEmptyOrSpaces(e)) empty = true;
-  })
   if (empty) return alert("You can't have empty fields!");
-  if (finished["useful"].length == 0 && finished["useless"].length == 0 && finished["nsfw"].length == 0)
+  if (finished["useful"].length == 0 && finished["useless"].length == 0 && finished)
       return alert("You need to add at least one question before exporting");
       
     svgContainer.classList.remove('hide'); //making visible
